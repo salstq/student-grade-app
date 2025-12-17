@@ -30,8 +30,7 @@ study_hours = st.slider("Study Hours Per Week", 0, 40, 10)
 previous_grade = st.slider("Previous Grade", 60, 100, 75)
 extracurricular = st.selectbox(
     "Extracurricular Activities",
-    options=[0, 1, 2, 3],
-    format_func=lambda x: "Yes" if x > 0 else "No"
+    options=[0, 1, 2, 3]
 )
 
 gender = st.radio("Gender", ["Male", "Female"])
@@ -76,8 +75,8 @@ if st.button("🔍 Predict Final Grade"):
     st.subheader("📊 Prediction Result")
     st.success(f"Predicted Final Grade: **{prediction:.2f}**")
 
-    st.caption("""
-    ⚠️ Catatan:
-    Hasil prediksi bersifat estimasi dan tidak sepenuhnya merepresentasikan performa akademik siswa.
+    st.info("""
+    Model ini memiliki keterbatasan karena hubungan antar fitur tidak menunjukkan korelasi kuat.
+    Hasil prediksi digunakan untuk tujuan analisis dan pembelajaran.
     """)
 
